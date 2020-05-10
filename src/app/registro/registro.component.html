@@ -1,1 +1,29 @@
-<p>registro works!</p>
+<!-- register.component.html -->
+
+<div class="register">
+  <form class="custom-form" method="post">
+    <h1>Registrar</h1>
+    <input
+      type="email"
+      [(ngModel)]="email"
+      name="email"
+      placeholder="Correo"
+      required="required"
+    />
+    <input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      placeholder="Contraseña"
+      required="required"
+    />
+    <input
+      type="password"
+      [(ngModel)]="confirmPassword"
+      name="password"
+      placeholder="Repite la contraseña"
+      required="required"
+    />
+    <button type="submit" (click)="register()">Registrar</button>
+  </form>
+</div>
