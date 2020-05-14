@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users/user.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -20,7 +21,10 @@ export class RegistroComponent implements OnInit {
     this.userService.register(user).subscribe(data => {
       this.userService.setToken(data.token);
       this.router.navigateByUrl('/');
-    })
+    },
+    error =>{
+      console.log(error);
+    });
   };
 
   ngOnInit(): void {

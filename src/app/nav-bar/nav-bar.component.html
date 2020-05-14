@@ -30,41 +30,120 @@
       </div>
     </div>
   </div>
+
   <div class="row p-3 mb-2 bg-light text-dark">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Guitarras</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Bajos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Baterias</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Teclados</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Grabación</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Accesorios</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-7">
+      <button mat-button [matMenuTriggerFor]="Guitarras">Guitarras</button>
+      <button mat-button [matMenuTriggerFor]="Bajos">Bajos</button>
+      <button mat-button [matMenuTriggerFor]="Ukuleles">Ukuleles</button>
+      <button mat-button [matMenuTriggerFor]="Percusion">Percusión</button>
+      <button mat-button [matMenuTriggerFor]="Teclados">Teclados</button>
+      <button mat-button [matMenuTriggerFor]="Grabacion">Grabación</button>
+      <button mat-button>Accesorios</button>
+
+      <mat-menu #Guitarras="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="Fernandez">Fernandez</button>
+        <button mat-menu-item [matMenuTriggerFor]="Importadas">Importadas</button>
+      </mat-menu>
+
+      <mat-menu #Fernandez='matMenu'>
+        <button mat-menu-item>Básicas</button>
+        <button mat-menu-item>Estudio</button>
+        <button mat-menu-item>Semi-concierto</button>
+        <button mat-menu-item>Concierto</button>
+      </mat-menu>
+
+      <mat-menu #Importadas='matMenu'>
+        <button mat-menu-item>Vizcaya</button>
+        <button mat-menu-item>Yamaha</button>
+        <button mat-menu-item>Ibanez</button>
+        <button mat-menu-item>Fender</button>
+      </mat-menu>
+
+      <mat-menu #Bajos="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="Belectrico">Eléctros</button>
+        <button mat-menu-item [matMenuTriggerFor]="Bacustico">Acústicos</button>
+      </mat-menu>
+
+      <mat-menu #Belectrico='matMenu'>
+        <button mat-menu-item>Squier</button>
+        <button mat-menu-item>Ibanez</button>
+        <button mat-menu-item>Fender</button>
+      </mat-menu>
+
+      <mat-menu #Bacustico='matMenu'>
+        <button mat-menu-item>Ibanez</button>
+        <button mat-menu-item>Fender</button>
+      </mat-menu>
+
+      <mat-menu #Ukuleles="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="Uoelectrico">Eléctro-acusticos</button>
+        <button mat-menu-item [matMenuTriggerFor]="Uacustico">Acústicos</button>
+      </mat-menu>
+
+      <mat-menu #Uoelectrico='matMenu'>
+        <button mat-menu-item>Freeman</button>
+        <button mat-menu-item>Memphis</button>
+        <button mat-menu-item>Kala</button>
+        <button mat-menu-item>Ibanez</button>
+      </mat-menu>
+
+      <mat-menu #Uacustico='matMenu'>
+        <button mat-menu-item>Freeman</button>
+        <button mat-menu-item>Memphis</button>
+        <button mat-menu-item>Memphis</button>
+        <button mat-menu-item>Nativa</button>
+        <button mat-menu-item>Ibanez</button>
+      </mat-menu>
+
+      <mat-menu #Percusion="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="Pbateria">Baterias</button>
+        <button mat-menu-item [matMenuTriggerFor]="Pbongos">Bongos</button>
+        <button mat-menu-item [matMenuTriggerFor]="Ptumbas">Tumbas</button>
+      </mat-menu>
+
+      <mat-menu #Pbateria='matMenu'>
+        <button mat-menu-item>Moon</button>
+        <button mat-menu-item>Fever</button>
+        <button mat-menu-item>Pearl</button>
+      </mat-menu>
+
+      <mat-menu #Pbongos='matMenu'>
+        <button mat-menu-item>LP</button>
+        <button mat-menu-item>Meinl</button>
+      </mat-menu>
+
+      <mat-menu #Ptumbas='matMenu'>
+        <button mat-menu-item>LP</button>
+        <button mat-menu-item>Meinl</button>
+      </mat-menu>
+
+      <mat-menu #Teclados="matMenu">
+        <button mat-menu-item>Yamaha</button>
+        <button mat-menu-item>Casio</button>
+        <button mat-menu-item>Pearl</button>
+      </mat-menu>
+
+      <mat-menu #Grabacion="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="Gmicros">Micros</button>
+        <button mat-menu-item [matMenuTriggerFor]="Ginterfaces">Interfaces</button>
+        <button mat-menu-item>Accesorios</button>
+      </mat-menu>
+
+      <mat-menu #Gmicros="matMenu">
+        <button mat-menu-item>Shure</button>
+        <button mat-menu-item>IK</button>
+      </mat-menu>
+
+      <mat-menu #Ginterfaces="matMenu">
+        <button mat-menu-item>Focusrite</button>
+        <button mat-menu-item>Tascam</button>
+      </mat-menu>
+
     </div>
-    <div class="col-sm-4"></div>
+    <div class="col-sm-2"></div>
   </div>
+
 </div>
 
